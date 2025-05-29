@@ -1,0 +1,85 @@
+<div class="container">
+  <header class="header-bar">
+    <div class="site-title">BreazeInTheMoon</div>
+    <button class="btn" routerLink="/login">Cerrar sesión</button>
+  </header>
+
+  <main class="hotel-detail-main">
+    <div class="hotel-detail-card">
+      <h2 class="hotel-title">GHL Hotel Sunrise</h2>
+
+      <div class="hotel-gallery">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/298757286.jpg?k=f5ea109103dd1e3bcb43a8af0b4b827636b41bf89a41820fbba8372e8ab4a3b4&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/298757281.jpg?k=5bdee895096becaca712d907a9febc885092efa726da207e2e4f460274261d2e" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/298758148.jpg?k=dd910fc6780fec6a28ea2dd83cd8004f30cb33a9460a09600f137301a59fdb19" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/550306779.jpg?k=df16d9a74155368d999da82f9f2fed4c7dd1fd1078696e88287071e8b2072d32" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/172345054.jpg?k=83d04256d046e9ab57b70b741b52d00c3571dbbf5528a59c682eaa9dfb0f8664" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/298762405.jpg?k=cb73f7ba83c7d234c21eec5408efe849d8f351ff0e1d22a478bf2c1ef3e3598a" />
+      </div>
+
+      <section class="hotel-section">
+        <h3>Descripción</h3>
+        <p>
+          El GHL Hotel Sunrise es un hotel 4 estrellas ubicado en San Andrés, con piscina de agua dulce sobre el mar, playa privada, gimnasio, spa con solárium, jacuzzi y sauna, restaurantes, bares, discoteca y centro de convenciones. Ideal para familias, ejecutivos y grupos de amigos.
+        </p>
+      </section>
+
+<section class="hotel-section rating-section">
+  <h3>Calificaciones del Hotel</h3>
+
+  <div *ngFor="let cal of calificaciones" class="rating-item">
+    <span class="rating-label">{{ cal.label }}:</span>
+    <div class="star-rating">
+      <ng-container *ngFor="let star of [5, 4, 3, 2, 1]">
+        <input
+          type="radio"
+          [id]="cal.name + star"
+          [name]="cal.name"
+          [value]="star"
+          (change)="guardarCalificacion(cal.name, star)"
+        />
+        <label [for]="cal.name + star" [title]="star + ' estrellas'">★</label>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+      <section class="hotel-section">
+        <h3>Servicios destacados</h3>
+        <ul class="hotel-services">
+          <li *ngFor="let servicio of servicios">{{ servicio }}</li>
+        </ul>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Ubicación y alrededores</h3>
+        <ul>
+          <li *ngFor="let ubicacion of ubicaciones">{{ ubicacion }}</li>
+        </ul>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Habitaciones</h3>
+        <p>
+          El hotel cuenta con 200 habitaciones amplias, equipadas con TV de pantalla plana, minibar, baño privado con secador de pelo y toallas, y vistas al mar en muchas de ellas.
+        </p>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Gastronomía</h3>
+        <p>
+          Disfruta de desayuno tropical, bares junto a la piscina y una variada oferta gastronómica, incluyendo cocina asiática en el restaurante Shima Sushi Café Bar.
+        </p>
+      </section>
+
+      <div class="hotel-buttons">
+        <button class="btn btn-back" routerLink="/home">Atrás</button>
+        <button class="btn btn-reserve" [routerLink]="['/reserva-san-andres']">Hacer Reserva</button>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <p>&copy; 2025 BreazeInTheMoon. Todos los derechos reservados.</p>
+  </footer>
+</div>

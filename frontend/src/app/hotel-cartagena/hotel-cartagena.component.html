@@ -1,0 +1,85 @@
+<div class="container">
+  <header class="header-bar">
+    <div class="site-title">BreazeInTheMoon</div>
+    <button class="btn" routerLink="/login">Cerrar sesión</button>
+  </header>
+
+  <main class="hotel-detail-main">
+    <div class="hotel-detail-card">
+      <h2 class="hotel-title">Hernández Suite Cartagena de Indias</h2>
+
+      <div class="hotel-gallery">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/567709323.jpg?k=36429217ae2a501909947c567b5edd16f9a3d3e7164023967ebdbd582a95ef38&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/567708518.jpg?k=6be54e004e4e3ce6d3193b4774e2b98265ef25c00db3d89d112e4143380a334e&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/504795063.jpg?k=8f1bcd1b224ea26b8718d0ba3b3638ef1af94c316c78ae87400cb4c4a54e5907&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/599426527.jpg?k=a7ff5c7fda8616555a9b5ca09bfc0662b7692d54e0e5d6ef213201d0ef503b07&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/599426552.jpg?k=cff4959117615b0ca734b6d520cc11491d6318174c39c9db6ef9e4c49d2fa74d&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/488574449.jpg?k=7facc95e9e8508fcd4df08a8514139d588cc289041cbe84651b9c84e117480a2&o=" />
+      </div>
+
+      <section class="hotel-section">
+        <h3>Descripción</h3>
+        <p>
+          Hernández Suite Cartagena de Indias se encuentra en la zona de Bocagrande, a pocos pasos de la playa y cerca de los principales puntos turísticos. Ideal para familias, parejas y viajeros de negocios.
+        </p>
+      </section>
+
+      <section class="hotel-section rating-section">
+        <h3>Calificaciones del Hotel</h3>
+        <div *ngFor="let cal of calificaciones" class="rating-item">
+          <span class="rating-label">{{ cal.label }}:</span>
+          <div class="star-rating">
+            <ng-container *ngFor="let star of [5, 4, 3, 2, 1]">
+              <input
+                type="radio"
+                [id]="cal.name + star"
+                [name]="cal.name"
+                [value]="star"
+                [checked]="star === cal.checked"
+                disabled
+              />
+              <label [for]="cal.name + star" [title]="star + ' estrellas'">★</label>
+            </ng-container>
+          </div>
+        </div>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Servicios destacados</h3>
+        <ul class="hotel-services">
+          <li *ngFor="let servicio of servicios">{{ servicio }}</li>
+        </ul>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Ubicación y alrededores</h3>
+        <ul>
+          <li *ngFor="let ubicacion of ubicaciones">{{ ubicacion }}</li>
+        </ul>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Habitaciones</h3>
+        <p>
+          Las habitaciones están equipadas con aire acondicionado, escritorio, TV de pantalla plana, baño privado, ropa de cama y toallas. Algunas tienen balcón y vistas a la ciudad.
+        </p>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Gastronomía</h3>
+        <p>
+          El hotel ofrece desayuno continental o americano todas las mañanas y dispone de un bar para disfrutar bebidas y snacks.
+        </p>
+      </section>
+
+      <div class="hotel-buttons">
+        <button class="btn btn-back" routerLink="/home">Atrás</button>
+        <button class="btn btn-reserve" [routerLink]="['/reserva-cartagena']">Hacer Reserva</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 BreazeInTheMoon. Todos los derechos reservados.</p>
+  </footer>
+</div>

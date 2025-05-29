@@ -1,0 +1,86 @@
+<div class="container">
+  <header class="header-bar">
+    <div class="site-title">BreazeInTheMoon</div>
+    <button class="btn" routerLink="/login">Cerrar sesión</button>
+  </header>
+
+  <main class="hotel-detail-main">
+    <div class="hotel-detail-card">
+      <h2 class="hotel-title">KARAYA DIVE RESORT</h2>
+
+      <div class="hotel-gallery">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/447956439.jpg?k=c953b9fbda890a75791b0884adddd92963378a41fb7817a3eb5e0fc7499eba9e&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max500/447960026.jpg?k=171a94270fbf198ad0a443918b500876c90cae79d4381dc53daf30dc33650654&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/363569869.jpg?k=b5fb2ee160161eb981ad280175377af50a801168aebab6e2549809d0276c6d3b&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/418557208.jpg?k=254d0bc53662474ccbb0ca9526fabce2f16021a3b0bdc9caf974441dd1df0cd0&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/443074184.jpg?k=1b5944c4ea68eef5a16ef1d349c6d2f6bc5430c4c69ee6dcfd41a19adb6e3437&o=" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/443074753.jpg?k=fc967ff4a4e271d6224aa06f8e5063c3fb7641798ce24d5abe28fb3f57d274ca&o=" />
+      </div>
+
+      <section class="hotel-section">
+        <h3>Descripción</h3>
+        <p>
+          KARAYA DIVE RESORT, situado en Santa Marta, es un alojamiento ideal para los amantes del buceo y la naturaleza. Ofrece terraza, restaurante, bar y wifi gratis. Su ubicación es perfecta para actividades acuáticas.
+        </p>
+      </section>
+
+      <section class="hotel-section rating-section">
+        <h3>Calificaciones del Hotel</h3>
+        <div *ngFor="let cal of calificaciones" class="rating-item">
+          <span class="rating-label">{{ cal.label }}:</span>
+          <div class="star-rating">
+            <ng-container *ngFor="let star of [5,4,3,2,1]">
+              <input
+                type="radio"
+                [id]="cal.name + star"
+                [name]="cal.name"
+                [value]="star"
+                [checked]="star === cal.checked"
+                disabled
+              />
+              <label [for]="cal.name + star" [title]="star + ' estrellas'">★</label>
+            </ng-container>
+          </div>
+        </div>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Servicios destacados</h3>
+        <ul class="hotel-services">
+          <li *ngFor="let servicio of servicios">{{ servicio }}</li>
+        </ul>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Ubicación y alrededores</h3>
+        <ul>
+          <li *ngFor="let ubicacion of ubicaciones">{{ ubicacion }}</li>
+        </ul>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Habitaciones</h3>
+        <p>
+          Las habitaciones cuentan con aire acondicionado, baño privado, ropa de cama, toallas y algunas tienen balcón con vistas al mar o montaña.
+        </p>
+      </section>
+
+      <section class="hotel-section">
+        <h3>Gastronomía</h3>
+        <p>
+          El restaurante ofrece platos locales e internacionales, opciones vegetarianas y cócteles servidos en la terraza o el jardín.
+        </p>
+      </section>
+
+      <div class="hotel-buttons">
+        <button class="btn btn-back" routerLink="/home">Atrás</button>
+        <button class="btn btn-reserve" [routerLink]="['/reserva-santa-marta']">Hacer Reserva</button>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 BreazeInTheMoon. Todos los derechos reservados.</p>
+  </footer>
+</div>

@@ -1,0 +1,123 @@
+<div class="container">
+  <main class="reserva-main">
+    <div class="reserva-card">
+      <h2 class="reserva-title">Reserva en Karaya Dive Resort</h2>
+
+      <!-- Mensaje de confirmación -->
+      <div class="mensaje-confirmacion" *ngIf="reservaConfirmada">
+        <p>✅ Confirmación exitosa. La confirmación ha sido enviada al número de celular proporcionado.</p>
+        <button class="btn-salir" (click)="salir()">Salir</button>
+      </div>
+
+      <!-- Formulario -->
+      <form class="reserva-form" *ngIf="!reservaConfirmada" (ngSubmit)="confirmarReserva()">
+        <!-- Tipo de habitación -->
+        <section class="reserva-section">
+          <h3>Disponibilidad y tipo de habitación</h3>
+          <div class="habitaciones-lista">
+            <label><input type="radio" name="tipo_habitacion" value="suite" required checked> Suite<br>
+              <span class="servicios">Incluye aire acondicionado, minibar, baño privado, vista al mar</span>
+            </label>
+            <label><input type="radio" name="tipo_habitacion" value="triple"> Triple<br>
+              <span class="servicios">Incluye aire acondicionado, minibar, baño privado</span>
+            </label>
+            <label><input type="radio" name="tipo_habitacion" value="familiar"> Familiar<br>
+              <span class="servicios">Incluye aire acondicionado, dos baños, piscina</span>
+            </label>
+            <label><input type="radio" name="tipo_habitacion" value="doble"> Doble<br>
+              <span class="servicios">Incluye aire acondicionado, baño privado</span>
+            </label>
+            <label><input type="radio" name="tipo_habitacion" value="doble_2_camas"> Doble - 2 camas<br>
+              <span class="servicios">Incluye aire acondicionado, baño privado</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Personas -->
+        <section class="reserva-section">
+          <h3>¿Cuántas personas?</h3>
+          <div class="reserva-row">
+            <div>
+              <label for="adultos">Adultos</label>
+              <input type="number" id="adultos" name="adultos" min="1" max="6" required />
+            </div>
+            <div>
+              <label for="ninos">Niños</label>
+              <input type="number" id="ninos" name="ninos" min="0" max="6" required />
+            </div>
+          </div>
+        </section>
+
+        <!-- Fechas -->
+        <section class="reserva-section">
+          <h3>Fechas de la reserva</h3>
+          <div class="reserva-row">
+            <div>
+              <label for="checkin">Check In</label>
+              <input type="date" id="checkin" name="checkin" required />
+            </div>
+            <div>
+              <label for="checkout">Check Out</label>
+              <input type="date" id="checkout" name="checkout" required />
+            </div>
+          </div>
+        </section>
+
+        <!-- Datos del huésped -->
+        <section class="reserva-section">
+          <h3>Datos del huésped principal</h3>
+          <div class="reserva-row">
+            <div>
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+          <div class="reserva-row">
+            <div>
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required />
+            </div>
+            <div>
+              <label for="documento">Documento de identidad</label>
+              <input type="text" id="documento" name="documento" required />
+            </div>
+          </div>
+        </section>
+
+        <!-- Servicios adicionales -->
+        <section class="reserva-section">
+          <h3>Servicios adicionales</h3>
+          <div class="servicios-adicionales">
+            <label><input type="checkbox" name="servicio[]" value="spa" /> Spa y centro de bienestar</label>
+            <label><input type="checkbox" name="servicio[]" value="gimnasio" /> Gimnasio</label>
+            <label><input type="checkbox" name="servicio[]" value="snorkel" /> Snorkel</label>
+            <label><input type="checkbox" name="servicio[]" value="piscina" /> Piscina exterior</label>
+          </div>
+        </section>
+
+        <!-- Método de pago -->
+        <section class="reserva-section">
+          <h3>Método de Pago</h3>
+          <div class="metodo-pago">
+            <label class="metodo-option">
+              <input type="radio" name="metodo_pago" value="presencial" required checked />
+              <span class="metodo-contenido">
+                <span class="metodo-icon">🏨</span>
+                <span class="metodo-texto">Pago en el<br />Hotel</span>
+              </span>
+            </label>
+          </div>
+          <div class="pago-contenido">
+            <p class="info-pago">✅ Pagarás directamente en recepción al llegar al hotel.</p>
+          </div>
+        </section>
+
+        <button type="submit" class="btn btn-confirmar">Confirmar Reserva</button>
+      </form>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,63 @@
+.container3 {
+  background: rgb(189, 186, 186);
+  border-radius: 5px;
+  text-align: center;
+  width: 550px;
+  padding: 30px;
+  margin-top: 150px;
+  margin-left: 350px;
+  margin-right: 350px;
+
+  input {
+    width: 35%;
+    height: 30px;
+    margin: 0.5rem;
+    text-align: center;
+    border-radius: 9rem;
+  }
+
+  label {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    color: rgb(128, 6, 32);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+
+  }
+
+  .btn1 {
+  background: rgb(128, 6, 32);
+  color: white;
+  padding: 8px 25px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  }
+
+  .btn {
+    color: #fff;
+    background: rgb(128, 6, 32);
+    font-size: 13px;
+    line-height: 23px;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}

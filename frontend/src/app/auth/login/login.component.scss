@@ -1,0 +1,56 @@
+body {
+  background-image: url('/assets/img/fondo-login.jpg');
+  background-size: cover;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.container3 {
+  background: rgb(189, 186, 186);
+  border-radius: 5px;
+  text-align: center;
+  width: 550px;
+  padding: 30px;
+  margin-top: 150px;
+  margin-left: 350px;
+  margin-right: 350px;
+}
+
+.container3 input {
+  width: 60%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.btn {
+  background: rgb(128, 6, 32);
+  color: white;
+  padding: 8px 25px;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+.btn1 {
+  background: rgb(128, 6, 32);
+  color: white;
+  padding: 8px 25px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.btn-switch {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+}

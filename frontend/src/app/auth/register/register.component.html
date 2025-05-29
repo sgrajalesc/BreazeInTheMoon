@@ -1,0 +1,46 @@
+<section class="container3">
+  <h2>Crear cuenta</h2>
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm" novalidate>
+
+    <label>Nombre</label>
+    <input
+      type="text"
+      [(ngModel)]="nombre"
+      name="nombre"
+      required
+      #nombreInput="ngModel"
+    />
+    <div *ngIf="registerForm.submitted && nombreInput.invalid" class="error">
+      El nombre es obligatorio.
+    </div>
+
+    <label>Correo</label>
+    <input
+      type="email"
+      [(ngModel)]="correo"
+      name="correo"
+      required
+      #correoInput="ngModel"
+    />
+    <div *ngIf="registerForm.submitted && correoInput.invalid" class="error">
+      Ingresa un correo válido.
+    </div>
+
+    <label>Contraseña</label>
+    <input
+      type="password"
+      [(ngModel)]="contrasena"
+      name="contrasena"
+      required
+      minlength="6"
+      #contrasenaInput="ngModel"
+    />
+    <div *ngIf="registerForm.submitted && contrasenaInput.invalid" class="error">
+      La contraseña debe tener mínimo 6 caracteres.
+    </div>
+
+    <button class="btn1" type="submit">Registrar</button>
+    <br />
+    <a class="btn-switch" routerLink="/login">¿Ya tienes cuenta? Inicia sesión</a>
+  </form>
+</section>

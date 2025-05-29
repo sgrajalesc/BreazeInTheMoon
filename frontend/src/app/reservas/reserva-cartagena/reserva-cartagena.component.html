@@ -1,0 +1,121 @@
+<main class="reserva-main">
+  <div class="reserva-card">
+    <h2 class="reserva-title">Reserva en Hernández Suite Cartagena de Indias</h2>
+
+    <!-- Mensaje de confirmación -->
+    <div *ngIf="mostrarMensaje" class="mensaje-confirmacion">
+      <p>✅ Confirmación exitosa. La confirmación ha sido enviada al número de celular proporcionado.</p>
+      <button class="btn-salir" (click)="salir()">Salir</button>
+    </div>
+
+    <!-- Formulario -->
+    <form *ngIf="!mostrarMensaje" (ngSubmit)="confirmarReserva()" class="reserva-form">
+
+      <!-- Tipo de habitación -->
+      <section class="reserva-section">
+        <h3>Disponibilidad y tipo de habitación</h3>
+        <div class="habitaciones-lista">
+          <label>
+            <input type="radio" name="tipoHabitacion" [(ngModel)]="reserva.tipoHabitacion" value="suite_estandar" />
+            Suite Estándar (2 personas)<br />
+            <span class="servicios">Incluye minibar, aire acondicionado, baño privado</span>
+          </label>
+          <label>
+            <input type="radio" name="tipoHabitacion" [(ngModel)]="reserva.tipoHabitacion" value="suite_terraza" />
+            Suite con Terraza (2 personas)<br />
+            <span class="servicios">Incluye minibar, terraza privada, piscina en azotea</span>
+          </label>
+          <label>
+            <input type="radio" name="tipoHabitacion" [(ngModel)]="reserva.tipoHabitacion" value="suite_familiar" />
+            Suite Familiar (4 personas)<br />
+            <span class="servicios">Incluye minibar, dos baños, recepción 24 horas</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Personas -->
+      <section class="reserva-section">
+        <h3>¿Cuántas personas?</h3>
+        <div class="reserva-row">
+          <div>
+            <label for="adultos">Adultos</label>
+            <input type="number" id="adultos" name="adultos" [(ngModel)]="reserva.adultos" min="1" max="4" required />
+          </div>
+          <div>
+            <label for="ninos">Niños</label>
+            <input type="number" id="ninos" name="ninos" [(ngModel)]="reserva.ninos" min="0" max="4" required />
+          </div>
+        </div>
+      </section>
+
+      <!-- Fechas -->
+      <section class="reserva-section">
+        <h3>Fechas de la reserva</h3>
+        <div class="reserva-row">
+          <div>
+            <label for="checkin">Check In</label>
+            <input type="date" id="checkin" name="checkin" [(ngModel)]="reserva.checkin" required />
+          </div>
+          <div>
+            <label for="checkout">Check Out</label>
+            <input type="date" id="checkout" name="checkout" [(ngModel)]="reserva.checkout" required />
+          </div>
+        </div>
+      </section>
+
+      <!-- Datos del huésped -->
+      <section class="reserva-section">
+        <h3>Datos del huésped principal</h3>
+        <div class="reserva-row">
+          <div>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="reserva.nombre" required />
+          </div>
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" [(ngModel)]="reserva.email" required />
+          </div>
+        </div>
+        <div class="reserva-row">
+          <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" [(ngModel)]="reserva.telefono" required />
+          </div>
+          <div>
+            <label for="documento">Documento de identidad</label>
+            <input type="text" id="documento" name="documento" [(ngModel)]="reserva.documento" required />
+          </div>
+        </div>
+      </section>
+
+      <!-- Servicios adicionales -->
+      <section class="reserva-section">
+        <h3>Servicios adicionales</h3>
+        <div class="servicios-adicionales">
+          <label><input type="checkbox" [(ngModel)]="reserva.servicios.desayuno" name="desayuno" /> Desayuno gratuito</label>
+          <label><input type="checkbox" [(ngModel)]="reserva.servicios.piscina" name="piscina" /> Acceso a piscina en azotea</label>
+          <label><input type="checkbox" [(ngModel)]="reserva.servicios.wifi" name="wifi" /> Wifi gratis</label>
+        </div>
+      </section>
+
+      <!-- Método de Pago -->
+      <section class="reserva-section">
+        <h3>Método de Pago</h3>
+        <div class="metodo-pago">
+          <label class="metodo-option">
+            <input type="radio" name="metodoPago" [(ngModel)]="reserva.metodoPago" value="presencial" />
+            <span class="metodo-contenido">
+              <span class="metodo-icon">🏨</span>
+              <span class="metodo-texto">Pago en el<br />Hotel</span>
+            </span>
+          </label>
+        </div>
+        <div class="pago-contenido">
+          <p class="info-pago">✅ Pagarás directamente en recepción al llegar al hotel.</p>
+        </div>
+      </section>
+
+      <button type="submit" class="btn btn-confirmar">Confirmar Reserva</button>
+    </form>
+  </div>
+</main>

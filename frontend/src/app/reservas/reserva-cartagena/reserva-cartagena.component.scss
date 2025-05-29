@@ -1,0 +1,1286 @@
+/* ----------------------------- */
+/*       Estilos base            */
+/* ----------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #3a2a2a;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    flex: 1 0 auto;
+}
+
+/* ----------------------------- */
+/*    Header y navegación        */
+/* ----------------------------- */
+
+.header-bar, .nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 24px 8px 24px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    font-weight: 600;
+    color: #8e1b1b;
+    margin-bottom: 0;
+}
+
+.site-title, .nav-main h2 {
+    font-size: 1.7rem;
+    margin: 0;
+    line-height: 1.1;
+    color: #8e1b1b;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0 32px 0 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #3a2a2a;
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: color 0.3s;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.nav-menu li a:hover {
+    color: #8e1b1b;
+    background: #f3eaea;
+}
+
+.btn {
+    background: #8e1b1b;
+    color: #fff;
+    border: none;
+    padding: 7px 22px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: none;
+    margin-left: 0;
+    margin-right: 0;
+    height: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: #a32626;
+    box-shadow: 0 4px 16px rgba(142,27,27,0.07);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 0 0 24px 0;
+}
+
+/* ----------------------------- */
+/*    Banner y formulario        */
+/* ----------------------------- */
+
+.banner-one {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.banner-one img,
+.banner-image img {
+    width: 560px;
+    height: 680px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    margin: 0;
+}
+
+.booking-form-container {
+    width: 560px;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 36px rgba(0,0,0,0.13);
+    padding: 36px 32px 24px 32px;
+    gap: 16px;
+}
+
+.booking-form-container h2 {
+    text-align: center;
+    color: #8e1b1b;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.booking-form-container label {
+    margin-top: 6px;
+    font-size: 1rem;
+    color: #3a2a2a;
+    font-weight: 500;
+}
+
+.booking-form-container input,
+.booking-form-container select {
+    width: 100%;
+    padding: 7px 10px;
+    margin-top: 2px;
+    border-radius: 6px;
+    border: 1px solid #c9c9c9;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.personas-row,
+.habitaciones-row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 10px;
+}
+
+.personas-row > div,
+.habitaciones-row > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botón Consultar estilizado */
+
+.booking-form-container .btn {
+    background: #8e1b1b;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 16px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: background 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: block;
+}
+
+.booking-form-container .btn:hover {
+    background: #a32626;
+    box-shadow: 0 4px 16px rgba(142,27,27,0.09);
+}
+
+/* ----------------------------- */
+/*        Footer                 */
+/* ----------------------------- */
+
+.footer {
+    width: 100vw;
+    background: #8e1b1b;
+    color: #fffbe6;
+    font-size: 1rem;
+    text-align: center;
+    padding: 22px 0 18px 0;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    letter-spacing: 0.2px;
+    flex-shrink: 0;
+}
+
+/* ----------------------------- */
+/*        Responsive general     */
+/* ----------------------------- */
+
+@media (max-width: 1200px) {
+    .banner-one {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .banner-one img,
+    .banner-image img,
+    .booking-form-container {
+        width: 96vw;
+        max-width: 560px;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-bar, .nav-main {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 8px 8px 8px;
+    }
+    .nav-menu {
+        margin: 8px 0 0 0;
+        gap: 18px;
+    }
+    .btn {
+        margin-top: 14px;
+        width: 100%;
+        max-width: 250px;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    .footer {
+        padding: 18px 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    .banner-one img,
+    .banner-image img,
+    .booking-form-container {
+        width: 98vw;
+        max-width: 98vw;
+        padding: 14px 4vw;
+    }
+    .booking-form-container {
+        min-width: unset;
+        padding: 18px 8px;
+    }
+}
+
+/* ----------------------------- */
+
+/* Inicio sesion */
+
+.container3{
+    background: rgb(189, 186, 186);
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top:200px;
+    left:510px;
+    width: 550px;
+}
+
+.container3 input{
+width: 60%;
+margin-bottom: 15px;
+border-radius: 5px;
+}
+
+.container3 h2{
+    color: rgb(128, 6, 32);
+    text-align: center;
+}
+
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(128, 6, 32);;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #a1a1a1;
+  color: #fff;
+  text-align: center;
+  border-radius: 100px;
+  padding: 25px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+.personas-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.personas-row > div {
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+}
+.personas-input {
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 9rem;
+    border: 2px solid #000;
+    padding: 0 10px;
+    font-family: inherit;
+}
+.personas-row label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.habitaciones-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.habitaciones-row > div {
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+}
+.habitaciones-row label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+/* Opcional: Aplica el mismo estilo a los selects dentro de habitaciones-row */
+.habitaciones-row select {
+    width: 120px; /* Puedes ajustar el ancho según necesites */
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 9rem;
+    border: 2px solid #000;
+    padding: 0 10px;
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333'%3E%3Cpolygon points='0,0 12,0 6,12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Estilo inicio1 */
+
+/* Reset básico */
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+/* Header superior: nombre a la izquierda, menú a la derecha */
+.header-bar {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Menú desplegable de perfil */
+.perfil-menu {
+  position: relative;
+}
+.dropbtn {
+  background: #820620;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 22px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background: #fff;
+  min-width: 150px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 100;
+}
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.dropdown-content a:hover {
+  background: #f0f0f0;
+}
+.show {
+  display: block;
+}
+
+/* Título del sitio */
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #820620;
+  letter-spacing: 1px;
+}
+
+/* Grid de hoteles */
+.hoteles-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  width: 100%;
+  padding: 20px 0;
+}
+.hoteles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+
+/* Enlace de la tarjeta de hotel */
+.hotel-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+/* Tarjeta de hotel */
+.hotel-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s;
+  min-width: 0; /* Importante para evitar desbordes en grid */
+}
+.hotel-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  cursor: pointer;
+}
+.hotel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.hotel-desc {
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background: #820620;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 40px;
+}
+
+/* Responsive: tarjetas en columna en móvil */
+@media (max-width: 900px) {
+  .hoteles-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 90%;
+  }
+  .header-bar {
+    flex-direction: row;
+    padding: 12px 16px;
+  }
+  .site-title {
+    font-size: 1.2rem;
+  }
+  .hotel-card img {
+    height: 150px;
+  }
+}
+
+
+/*---------------------------------------------------------*/
+
+/* Contenedor principal del detalle de hotel */
+.hotel-detail-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    background: none;
+}
+
+/* Tarjeta principal del hotel */
+.hotel-detail-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 40px 40px 40px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 32px;
+}
+
+/* Título del hotel */
+.hotel-title {
+    text-align: center;
+    color: #8e1b1b;
+    font-size: 2.4rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+/* Galería de imágenes del hotel */
+.hotel-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+.hotel-gallery img {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 220px;
+    height: 140px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #eee;
+    transition: transform 0.2s;
+}
+.hotel-gallery img:hover {
+    transform: scale(1.04);
+}
+
+/* Secciones internas */
+.hotel-section {
+    margin-bottom: 28px;
+}
+
+.hotel-section h3 {
+    color: #8e1b1b;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Listas de servicios y ubicación */
+.hotel-services,
+.hotel-section ul {
+    list-style: disc inside;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 15px;
+    color: #444;
+    font-size: 1.05rem;
+}
+.hotel-services li,
+.hotel-section ul li {
+    margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .hotel-detail-card {
+        padding: 24px 8px;
+    }
+    .hotel-gallery img {
+        width: 48vw;
+        max-width: 95vw;
+        height: 120px;
+    }
+}
+@media (max-width: 650px) {
+    .hotel-title {
+        font-size: 1.5rem;
+    }
+    .hotel-detail-card {
+        padding: 12px 2vw;
+    }
+    .hotel-gallery {
+        gap: 8px;
+    }
+    .hotel-gallery img {
+        width: 98vw;
+        height: 100px;
+    }
+}
+
+.hotel-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.hotel-buttons .btn {
+    padding: 8px 18px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    min-width: 200px; /* Aumenta el ancho mínimo */
+    min-height: 38px;
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    overflow: hidden;          /* Oculta el texto que se desborda */
+    text-overflow: ellipsis;   /* Añade "..." al final del texto cortado */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.btn-back {
+    background-color: #ccc;
+    color: #333;
+}
+.btn-back:hover {
+    background-color: #b3b3b3;
+}
+
+.btn-reserve {
+    background-color: #8e1b1b;
+    color: white;
+}
+.btn-reserve:hover {
+    background-color: #a32626;
+}
+
+/*estilo estrellas calificacion */
+
+/* Contenedor general para la sección de calificaciones */
+.rating-section {
+    margin-bottom: 28px;
+}
+
+/* Cada ítem de calificación */
+.rating-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #3a2a2a;
+}
+
+/* Etiqueta del servicio (ej. Limpieza) */
+.rating-label {
+    width: 140px;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* Contenedor de estrellas */
+.star-rating {
+    direction: rtl; /* Para que la estrella 5 esté a la izquierda */
+    unicode-bidi: bidi-override;
+    font-size: 1.8rem;
+    display: inline-block;
+}
+
+/* Ocultar inputs radio */
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+/* Estrellas vacías */
+.star-rating label {
+    color: #ccc;
+    cursor: default;
+    transition: color 0.3s;
+    user-select: none;
+    margin: 0 2px;
+}
+
+/* Estrellas llenas (para inputs checked) */
+.star-rating input[type="radio"]:checked ~ label {
+    color: #f5a623;
+}
+
+/* Evita que las estrellas cambien color al pasar el ratón, porque están deshabilitadas */
+.star-rating input[type="radio"]:disabled ~ label:hover,
+.star-rating input[type="radio"]:disabled ~ label:hover ~ label {
+    color: #ccc;
+}
+
+/* Reservas */
+
+.reserva-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    background: none;
+    padding: 32px 0;
+}
+
+.reserva-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 40px 40px 40px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+.reserva-title {
+    text-align: center;
+    color: #8e1b1b;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.reserva-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.reserva-section h3 {
+    color: #8e1b1b;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.habitaciones-lista label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    padding-left: 2px;
+}
+
+.habitaciones-lista input[type="radio"] {
+    margin-right: 8px;
+}
+
+.servicios {
+    display: block;
+    font-size: 0.97rem;
+    color: #555;
+    margin-left: 28px;
+}
+
+.reserva-row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 8px;
+}
+
+.reserva-row > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.reserva-form input,
+.reserva-form select {
+    width: 100%;
+    padding: 7px 10px;
+    margin-top: 2px;
+    border-radius: 6px;
+    border: 1px solid #c9c9c9;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+}
+
+.servicios-adicionales label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Método de pago: solo pago presencial */
+.metodo-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.metodo-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 18px;
+    border: 2px solid #8e1b1b;
+    border-radius: 12px;
+    cursor: default;
+    background: #fff6f6;
+    font-size: 1.08rem;
+    min-height: 60px;
+    position: relative;
+}
+
+.metodo-option input[type="radio"] {
+    accent-color: #8e1b1b;
+    margin-right: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: default;
+}
+
+.metodo-option .metodo-contenido {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.metodo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #8e1b1b;
+    color: #fff;
+    font-size: 1.6rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.metodo-texto {
+    color: #8e1b1b;
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: block;
+}
+
+.pago-contenido {
+    padding: 15px;
+    border: 1px solid #8e1b1b;
+    border-radius: 8px;
+    margin-top: 10px;
+    background: #fff6f6;
+    color: #2a7f2a;
+    font-weight: 600;
+}
+
+.info-pago {
+    margin: 0;
+}
+
+/* Botones */
+.botones-reserva {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.btn-atras {
+    background: #ccc;
+    color: #333;
+    padding: 12px 28px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    min-width: 120px;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.btn-atras:hover {
+    background: #b3b3b3;
+    color: #222;
+}
+
+.btn-confirmar {
+    flex: 1;
+    height: 48px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8e1b1b;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: background 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.btn-confirmar:hover {
+    background: #a32626;
+    box-shadow: 0 4px 16px rgba(142,27,27,0.09);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .reserva-card {
+        padding: 18px 4vw 24px 4vw;
+    }
+    .reserva-main {
+        padding: 12px 0;
+    }
+    .reserva-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .botones-reserva {
+        flex-direction: column;
+    }
+    .btn-atras,
+    .btn-confirmar {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+.mensaje-confirmacion {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 18px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 24px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(21, 87, 36, 0.2);
+}
+
+.btn-salir {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 28px;
+    background: #8e1b1b;
+    color: #fff;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-salir:hover {
+    background: #a32626;
+}
+
+/* Administrador */
+
+/* Basado en tus estilos de hoteles y reservas */
+
+.admin-main {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 40px 40px 40px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.tab-btn {
+    background: #eee;
+    color: #8e1b1b;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #8e1b1b;
+    color: #fff;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+h2 {
+    color: #8e1b1b;
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+h3 {
+    color: #444;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+.admin-form {
+    margin-bottom: 32px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 180px;
+    min-width: 180px;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input,
+.form-group select {
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #8e1b1b;
+    outline: none;
+}
+
+.form-btn {
+    align-self: flex-end;
+}
+
+.btn {
+    background: #8e1b1b;
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0 2px;
+    height: 38px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: #a32626;
+}
+
+.btn-eliminar {
+    background: #d9534f;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 0.97rem;
+    margin: 0 2px;
+}
+.btn-eliminar:hover {
+    background: #c9302c;
+}
+
+.btn-modificar {
+    background: #0275d8;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 0.97rem;
+    margin: 0 2px;
+}
+.btn-modificar:hover {
+    background: #025aa5;
+}
+
+.tabla-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fafafa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.tabla th,
+.tabla td {
+    border: 1px solid #e1e1e1;
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 0.99rem;
+}
+
+.tabla th {
+    background-color: #f4f4f4;
+    color: #555;
+    font-weight: 700;
+}
+
+.tabla tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .admin-main {
+        padding: 18px 8px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-main {
+        padding: 8px 2vw;
+    }
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    .tabla th, .tabla td {
+        font-size: 0.85rem;
+        padding: 7px 6px;
+    }
+}

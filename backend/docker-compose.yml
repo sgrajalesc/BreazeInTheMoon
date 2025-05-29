@@ -1,0 +1,90 @@
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: BaseDatosSergioGrajales
+      POSTGRES_DB: hotel_reservations
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./api-gateway/.env
+    depends_on:
+      postgres:
+        condition: service_healthy 
+
+  usuarios-service:
+    build: ./usuarios-service
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./usuarios-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  hoteles-service:
+    build: ./hoteles-service
+    ports:
+      - "3002:3002"
+    env_file:
+      - ./hoteles-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  reservas-service:
+    build: ./reservas-service
+    ports:
+      - "3003:3003"
+    env_file:
+      - ./reservas-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  calificaciones-service:
+    build: ./calificaciones-service
+    ports:
+      - "3004:3004"
+    env_file:
+      - ./calificaciones-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  notificaciones-service:
+    build: ./notificaciones-service
+    ports:
+      - "3005:3005"
+    env_file:
+      - ./notificaciones-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy  
+
+  reportes-service:
+    build: ./reportes-service
+    ports:
+      - "3006:3006"
+    env_file:
+      - ./reportes-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
